@@ -1,0 +1,15 @@
+---
+- name: Add Docker repo.
+  yum_repository:
+    name: https://download.docker.com/linux/centos/docker-ce.repo
+    state: present
+
+- name: Install Docker package and dependencies
+  yum:
+    name: ["docker-ce", "docker-ce-cli", "containerd.io"]
+    state: present
+
+- name: Start Docker
+  service:
+    name: docker
+    state: started

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include docker_manager_leader"
+      include_role:
+        name: "docker_manager_leader"

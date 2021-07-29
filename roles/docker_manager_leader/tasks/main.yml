@@ -1,0 +1,16 @@
+---
+- name: Iniciar o Swarm e gerar o token
+  hosts: all
+  become: yes
+  tasks:
+  - name: Init the swarm and generate token
+    docker_swarm:
+      name: my-cluster
+      state: present
+      advertise_addr: ansible_facts['eth1']['ipv4']:2377
+    register: output
+
+  - name: outṕut the tokens
+    debug:
+      msg: output['swarm_facts']['JoinTokens']['Worker']
+
