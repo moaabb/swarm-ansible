@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  
+- name: "Include docker_manager_leader"
+  include_playbook:
+    name: "../../docker_manager_leader/tasks/main.yml"
