@@ -7,7 +7,7 @@
 - name: initialize swarm
   command: >
     docker swarm init
-    --advertise-addr={{ ansible_facts['enp0s3']['ipv4'] }}:2377
+    --advertise-addr={{ ansible_facts['enp3s0']['ipv4'] }}:2377
   when: swarm_status.rc != 0
   notify: output the tokens
 
