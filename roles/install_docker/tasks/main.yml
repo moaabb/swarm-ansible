@@ -1,8 +1,10 @@
 ---
 - name: Add Docker repo.
   yum_repository:
-    name: https://download.docker.com/linux/centos/docker-ce.repo
+    name: docker repo
     state: present
+    mirrorlist: 
+      - https://download.docker.com/linux/centos/docker-ce.repo
 
 - name: Install Docker package and dependencies
   yum:
