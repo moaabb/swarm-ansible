@@ -1,6 +1,6 @@
 ---
 - name: Init the swarm and generate token
-  docker_swarm:
+  community.docker.docker_swarm:
     name: my-cluster
     state: present
     advertise_addr: ansible_facts['eth1']['ipv4']:2377
