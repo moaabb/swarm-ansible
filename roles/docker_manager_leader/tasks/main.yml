@@ -3,11 +3,11 @@
   command: docker node ls
   register: swarm_status
   ignore_errors: true
-  
+
 - name: initialize swarm
   command: >
     docker swarm init
-    --advertise-addr={{ ansible_facts['enp3s0']['ipv4'] }}:2377
+    --advertise-addr={{ ansible_facts['enp0s8']['ipv4']['address'] }}:2377
   when: swarm_status.rc != 0
   notify: output the tokens
 
