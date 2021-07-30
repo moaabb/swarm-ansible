@@ -1,0 +1,4 @@
+---
+- name: output the tokens
+  debug:
+    msg: "Manager: {{ manager_token.stdout }}. Worker: {{ worker_token.stdout }}"
