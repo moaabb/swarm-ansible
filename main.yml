@@ -1,0 +1,7 @@
+---
+- name: Setup a Swarm Cluster
+  hosts: all
+  become: true
+  roles:
+  - install_docker
+  - docker_manager_leader
